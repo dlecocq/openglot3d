@@ -1,0 +1,12 @@
+#version 120
+
+varying vec2 texture_coordinate;
+uniform sampler2D my_color_texture;
+
+varying vec3 light;
+varying vec3 normal;
+
+uniform float t;
+
+vec4 function(float u, float v) {
+	return vec4(

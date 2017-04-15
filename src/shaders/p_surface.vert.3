@@ -1,0 +1,18 @@
+
+	gl_Position = gl_ModelViewProjectionMatrix * gl_Position;
+	
+	float h = 0.0001;
+	
+	vec4 xp = (function(gl_Vertex.x + h, gl_Vertex.y    ) - function(gl_Vertex.x - h, gl_Vertex.y    )) / (2.0 * h);
+	vec4 yp = (function(gl_Vertex.x    , gl_Vertex.y + h) - function(gl_Vertex.x    , gl_Vertex.y - h)) / (2.0 * h);
+	
+	//xp = gl_ModelViewMatrix * xp;
+	//yp = gl_ModelViewMatrix * yp;
+	
+	normal = cross(xp.xyz, yp.xyz);
+	
+	normal = (gl_ModelViewMatrix * vec4(normal.x, normal.y, normal.z, 0.0)).xyz;
+	
+	texture_coordinate = vec2(gl_MultiTexCoord0);
+
+}

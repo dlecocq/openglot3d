@@ -1,0 +1,13 @@
+, 1.0);
+}
+
+void main () {
+
+	vec4 result = gl_Vertex;
+
+	gl_Position = function(result.x);
+
+	light = gl_LightSource[0].position.xyz;
+
+	light = light - vec3(gl_ModelViewMatrix * gl_Position);
+	

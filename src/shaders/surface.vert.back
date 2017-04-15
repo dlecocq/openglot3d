@@ -1,0 +1,29 @@
+;
+}
+
+void main () {
+
+	vec4 result = gl_Vertex;
+
+	result.z = function(gl_Vertex.x, gl_Vertex.y);
+
+	gl_Position = gl_ModelViewProjectionMatrix * result;
+	
+	light = gl_LightSource[0].position.xyz - vec3(gl_ModelViewMatrix * result);
+	
+	float h = 0.001;
+	
+	float dx = (function(gl_Vertex.x + h, gl_Vertex.y    ) - function(gl_Vertex.x - h, gl_Vertex.y    )) / (2.0 * h);
+	float dy = (function(gl_Vertex.x		, gl_Vertex.y + h) - function(gl_Vertex.x    , gl_Vertex.y - h)) / (2.0 * h);
+	
+	//vec3 xp = vec3(1.0, 0.0, dx);
+	//vec3 yp = vec3(0.0, 1.0, dy);
+	
+	//normal = cross(xp, yp);
+	
+	//normal = (gl_ModelViewMatrix * vec4(normal.x, normal.y, normal.z, 0.0)).xyz;
+	normal = (gl_ModelViewMatrix * vec4(dx, dy, 1.0, 0.0)).xyz;
+	
+	texture_coordinate = vec2(gl_MultiTexCoord0);
+
+}
