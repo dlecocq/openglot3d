@@ -1,0 +1,123 @@
+\section{glot::grapher Class Reference}
+\label{classglot_1_1grapher}\index{glot::grapher@{glot::grapher}}
+{\tt \#include $<$grapher.h$>$}
+
+\subsection*{Public Types}
+\begin{CompactItemize}
+\item 
+typedef void($\ast$ {\bf keyboard\_\-function} )(unsigned char key, GLint x, GLint y)
+\begin{CompactList}\small\item\em Keyboard event handler typedef. \item\end{CompactList}\item 
+typedef void($\ast$ {\bf click\_\-function} )(GLint button, GLint x, GLint y)
+\begin{CompactList}\small\item\em Click even handler typedef. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+static int {\bf initialize} (int argc, char $\ast$$\ast$argv, short int options=AXES\_\-ON$|$GRID\_\-ON$|$X\_\-LIN$|$Y\_\-LIN, short int k\_\-options=ZOOM\_\-KEYS\_\-ON$|$AXES\_\-KEYS\_\-ON$|$GRID\_\-KEYS\_\-ON)
+\begin{CompactList}\small\item\em Initialize the \doxyref{grapher}{p.}{classglot_1_1grapher}. \item\end{CompactList}\item 
+static void {\bf run} ()
+\begin{CompactList}\small\item\em Enter the OpenGL main loop after initialization. \item\end{CompactList}\item 
+static void {\bf redraw} ()
+\begin{CompactList}\small\item\em User-requested redraw. \item\end{CompactList}\item 
+static void {\bf add} ({\bf primitive} \&p)
+\begin{CompactList}\small\item\em Add a curve to the plot. \item\end{CompactList}\item 
+static void {\bf remove} ({\bf primitive} \&p)
+\begin{CompactList}\small\item\em Delete a curve from the plot. \item\end{CompactList}\item 
+static void {\bf add} ({\bf shader\_\-primitive} \&p)
+\item 
+static void {\bf remove} (const {\bf shader\_\-primitive} \&p)
+\end{CompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{glot::grapher@{glot::grapher}!click\_\-function@{click\_\-function}}
+\index{click\_\-function@{click\_\-function}!glot::grapher@{glot::grapher}}
+\subsubsection[{click\_\-function}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf glot::grapher::click\_\-function})(GLint button, GLint x, GLint y)}\label{classglot_1_1grapher_c945e6ebe60c3cfeb0b8768c19a4d5c5}
+
+
+Click even handler typedef. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em button}]- GLint button pressed \item[{\em x}]- GLint x coordinate \item[{\em y}]- GLint y coordinate\end{description}
+\end{Desc}
+See set\_\-click\_\-function(...) for more details \index{glot::grapher@{glot::grapher}!keyboard\_\-function@{keyboard\_\-function}}
+\index{keyboard\_\-function@{keyboard\_\-function}!glot::grapher@{glot::grapher}}
+\subsubsection[{keyboard\_\-function}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf glot::grapher::keyboard\_\-function})(unsigned char key, GLint x, GLint y)}\label{classglot_1_1grapher_e11b07f266aff004839c7558599ce34d}
+
+
+Keyboard event handler typedef. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em key}]- unsigned char \item[{\em x}]- GLint x coordinate \item[{\em y}]- GLint y coordinate\end{description}
+\end{Desc}
+A keyboard event handler accepts a key and x, y coordinates 
+
+\subsection{Member Function Documentation}
+\index{glot::grapher@{glot::grapher}!add@{add}}
+\index{add@{add}!glot::grapher@{glot::grapher}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}static void glot::grapher::add ({\bf shader\_\-primitive} \& {\em p})\hspace{0.3cm}{\tt  [inline, static]}}\label{classglot_1_1grapher_89ccaac48b37b8a9cb8e1e43432965cd}
+
+
+\index{glot::grapher@{glot::grapher}!add@{add}}
+\index{add@{add}!glot::grapher@{glot::grapher}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}static void glot::grapher::add ({\bf primitive} \& {\em p})\hspace{0.3cm}{\tt  [static]}}\label{classglot_1_1grapher_3f3e39caee2ec38dc9c21d6d3c9ed564}
+
+
+Add a curve to the plot. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em c}]- The curve you wish to add to the plot\end{description}
+\end{Desc}
+If you instantiate a curve, you can add it to the plot with this function. NOTE: This does not automatically request a redisplay. The idea here is that you may be adding several curves at once, and so after adding all of your curves, etc., you should then call \doxyref{grapher::redraw()}{p.}{classglot_1_1grapher_3059b797e6369454e302840427cf1056} \index{glot::grapher@{glot::grapher}!initialize@{initialize}}
+\index{initialize@{initialize}!glot::grapher@{glot::grapher}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}static int glot::grapher::initialize (int {\em argc}, \/  char $\ast$$\ast$ {\em argv}, \/  short int {\em options} = {\tt AXES\_\-ON$|$GRID\_\-ON$|$X\_\-LIN$|$Y\_\-LIN}, \/  short int {\em k\_\-options} = {\tt ZOOM\_\-KEYS\_\-ON$|$AXES\_\-KEYS\_\-ON$|$GRID\_\-KEYS\_\-ON})\hspace{0.3cm}{\tt  [static]}}\label{classglot_1_1grapher_f5a295a8e0f6e287cded0514977f9463}
+
+
+Initialize the \doxyref{grapher}{p.}{classglot_1_1grapher}. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em argc}]- same as argc used for OpenGL initialization \item[{\em argv}]- same as argv used for OpenGL initialization \item[{\em options}]- startup options \item[{\em k\_\-options}]- the default keyboard actions options\end{description}
+\end{Desc}
+Use a bitwise or to select startup options: AXES\_\-ON, AXES\_\-OFF GRID\_\-ON, GRID\_\-OFF X\_\-LIN, X\_\-LOG (linear x scale or logarithmic) Y\_\-LIN, Y\_\-LOG (linear y scale or logarithmic) \index{glot::grapher@{glot::grapher}!redraw@{redraw}}
+\index{redraw@{redraw}!glot::grapher@{glot::grapher}}
+\subsubsection[{redraw}]{\setlength{\rightskip}{0pt plus 5cm}static void glot::grapher::redraw ()\hspace{0.3cm}{\tt  [static]}}\label{classglot_1_1grapher_3059b797e6369454e302840427cf1056}
+
+
+User-requested redraw. 
+
+If you create an event handler that will make some changes to the graph, you can make those changes and then request a redraw with this function. \index{glot::grapher@{glot::grapher}!remove@{remove}}
+\index{remove@{remove}!glot::grapher@{glot::grapher}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}static void glot::grapher::remove (const {\bf shader\_\-primitive} \& {\em p})\hspace{0.3cm}{\tt  [inline, static]}}\label{classglot_1_1grapher_1841ead1a8d6241e5c6f35fdde746a37}
+
+
+\index{glot::grapher@{glot::grapher}!remove@{remove}}
+\index{remove@{remove}!glot::grapher@{glot::grapher}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}static void glot::grapher::remove ({\bf primitive} \& {\em p})\hspace{0.3cm}{\tt  [static]}}\label{classglot_1_1grapher_2a89eb6c69bc5101896a050edc5f9e4b}
+
+
+Delete a curve from the plot. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em c}]- The curve you wish to delete from the plot\end{description}
+\end{Desc}
+If you've plotted a curve, but wish to remove it, you can do so with this function. As with add\_\-curve(...), this does not automatically request a redisplay. \index{glot::grapher@{glot::grapher}!run@{run}}
+\index{run@{run}!glot::grapher@{glot::grapher}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}static void glot::grapher::run ()\hspace{0.3cm}{\tt  [static]}}\label{classglot_1_1grapher_0b2131ed9108518ec725887e4ab6d857}
+
+
+Enter the OpenGL main loop after initialization. 
+
+In general, you will set up your event handlers, main code, etc., and then when you've gotten everything in place, you call \doxyref{grapher::run()}{p.}{classglot_1_1grapher_0b2131ed9108518ec725887e4ab6d857} to start the program's OpenGL portion. 
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf grapher.h}\end{CompactItemize}

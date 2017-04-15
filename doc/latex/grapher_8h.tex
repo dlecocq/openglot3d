@@ -1,0 +1,46 @@
+\section{grapher.h File Reference}
+\label{grapher_8h}\index{grapher.h@{grapher.h}}
+{\tt \#include $<$GL/glew.h$>$}\par
+{\tt \#include $<$GLUT/glut.h$>$}\par
+{\tt \#include $<$list$>$}\par
+{\tt \#include $<$map$>$}\par
+{\tt \#include \char`\"{}shader\_\-primitive.h\char`\"{}}\par
+{\tt \#include \char`\"{}primitive.h\char`\"{}}\par
+{\tt \#include \char`\"{}surface.h\char`\"{}}\par
+{\tt \#include \char`\"{}screen.h\char`\"{}}\par
+{\tt \#include \char`\"{}point.h\char`\"{}}\par
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+class {\bf glot::grapher}
+\end{CompactItemize}
+\subsection*{Namespaces}
+\begin{CompactItemize}
+\item 
+namespace {\bf glot}
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum {\bf glot::display\_\-opt} \{ \par
+{\bf glot::AXES\_\-OFF} =  0, 
+{\bf glot::GRID\_\-OFF} =  0, 
+{\bf glot::X\_\-LIN} =  0, 
+{\bf glot::Y\_\-LIN} =  0, 
+\par
+{\bf glot::AXES\_\-ON} =  1, 
+{\bf glot::GRID\_\-ON} =  2, 
+{\bf glot::X\_\-LOG} =  4, 
+{\bf glot::Y\_\-LOG} =  8
+ \}
+\begin{CompactList}\small\item\em Enumeration for display options. \item\end{CompactList}\item 
+enum {\bf glot::keyboard\_\-opt} \{ \par
+{\bf glot::ZOOM\_\-KEYS\_\-OFF} =  0, 
+{\bf glot::AXES\_\-KEYS\_\-OFF} =  0, 
+{\bf glot::GRID\_\-KEYS\_\-OFF} =  0, 
+{\bf glot::ZOOM\_\-KEYS\_\-ON} =  1, 
+\par
+{\bf glot::AXES\_\-KEYS\_\-ON} =  2, 
+{\bf glot::GRID\_\-KEYS\_\-ON} =  4
+ \}
+\begin{CompactList}\small\item\em Enumeration for keyboard action options. \item\end{CompactList}\end{CompactItemize}
